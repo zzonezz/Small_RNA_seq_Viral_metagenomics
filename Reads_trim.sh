@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "This script is to ungzip, move trimed Illumina sequencing data to user's folder"
 echo local=`pwd`
 echo -n "please input your main sqeuencing reulst folder:"
