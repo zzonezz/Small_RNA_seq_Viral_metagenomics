@@ -4,9 +4,9 @@ read inputpath
 echo -n "Please input your destination folder:"
 read outputpath
 echo -n "please input your genomeDir folder for STAR alignment:"
-read genomeDir #/projectnb/lau-bumc/zhengzhu/AaegL5/ncbi_dataset/data/GCA_002204515.1
+read genomeDir #/../../GCA_002204515.1
 echo -n "please input your sjdbGTFfile folder for STAR alignment:"
-read sjdbGTFfile #/projectnb/lau-bumc/zhengzhu/AaegL5/ncbi_dataset/data/GCA_002204515.1/GCF_002204515.2_AaegL5.0_genomic.gtf
+read sjdbGTFfile #/../GCF_002204515.2_AaegL5.0_genomic.gtf
 mkdir starresults
 module load star
     for file in `ls $outputpath`
