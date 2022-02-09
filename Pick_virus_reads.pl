@@ -24,7 +24,7 @@ while (<IN2>) {
 		$c="$a[0]";
 		}
 		else {
-      if (exists $hs{$c} ){print OUT ">$c\n$_\-$hs{$c}\n";undef $c;}
+      if (exists $hs{$c} ){print OUT ">$c\-$hs{$c}\n$_\n";undef $c;}
 		};
 			};
 close IN2;
