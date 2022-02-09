@@ -22,9 +22,10 @@ while (<IN2>) {
 	if (/>(.*)/) {
     my @a= split(" ",$1);
 		$c="$a[0]";
-		}
-		else {
-      if (exists $hs{$c} ){print OUT ">$c\-$hs{$c}\n$_\n";undef $c;}
-		};
+		if (exists $hs{$c} ){print OUT ">$c\-$hs{$c}\n";}
+                }
+                else {
+      		if (exists $hs{$c} ){print OUT "$_\n";}
+                };
 			};
 close IN2;
