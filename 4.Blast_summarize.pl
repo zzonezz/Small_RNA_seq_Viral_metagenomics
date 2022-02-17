@@ -20,7 +20,7 @@ foreach(<IN>){if (/viruses/)
   {chomp;
     my @a= split("\t",$_);
     #if (/(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/){}
-#0:readsname;1accession;2E;3start;4end;5qu_len;6ma_start;7map_end;8iden;9coverage;10kidom;11species;12commname;13blatnam
+#0:readsname;1accession;2E;3start;4end;5qu_len;6ref_start;7ref_end;8iden;9coverage;10kingdom;11species;12commname;13blatnam
 
 if (abs($a[4]-$a[3])>18){
     unless (exists $sequence{$a[0]}){
