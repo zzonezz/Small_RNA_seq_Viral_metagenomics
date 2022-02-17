@@ -12,8 +12,8 @@ my %taxnum;
 my $key;my $value;
 my %smallplus;
 my %bigplus;
-my %smallmius;
-my %bigmius;
+my %smallminus;
+my %bigminus;
 my %allseq; my $max=0;
 ####
 foreach(<IN>){if (/viruses/)
@@ -31,10 +31,10 @@ if (abs($a[4]-$a[3])>18){
 ####
       if (17<$a[5]&&$a[5]<24){
         if ($a[7]>$a[6]){$smallplus{"$a[1]\_$a[11]"}++;}
-        else{$smallmius{"$a[1]\_$a[11]"}++;}}
+        else{$smallminus{"$a[1]\_$a[11]"}++;}}
       elsif (23<$a[5]&&$a[5]<36){
         if ($a[7]>$a[6]){$bigplus{"$a[1]\_$a[11]"}++;}
-        else{$bigmius{"$a[1]\_$a[11]"}++;}}
+        else{$bigminus{"$a[1]\_$a[11]"}++;}}
   }
 }}
 };
@@ -51,10 +51,10 @@ close OUT;
 print OUT2 "Accesion_Virus\tAll\t18\-23\+\t18\-23\-\t24\-35\+\t24\-35\-\tsample\n";
 while (($key,$value)=each %taxnum){
 unless($smallplus{$key}){$smallplus{$key}=0};
-unless($smallmius{$key}){$smallmius{$key}=0};
+unless($smallminus{$key}){$smallminus{$key}=0};
 unless($bigplus{$key}){$bigplus{$key}=0};
-unless($bigmius{$key}){$bigmius{$key}=0};
- print OUT2 "$key\t$value\t$smallplus{$key}\t$smallmius{$key}\t$bigplus{$key}\t$bigmius{$key}\t$sample\n";
+unless($bigminus{$key}){$bigminus{$key}=0};
+ print OUT2 "$key\t$value\t$smallplus{$key}\t$smallminus{$key}\t$bigplus{$key}\t$bigminus{$key}\t$sample\n";
 } ;
 close OUT2;
 
